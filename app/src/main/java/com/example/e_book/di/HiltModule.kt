@@ -1,7 +1,7 @@
 package com.example.e_book.di
 
-import com.example.e_book.data_layer.Repo.AllBookRepoImpl
-import com.example.e_book.domain_layer.AllBookRepo
+import com.example.e_book.data_layer.Repo.RepoImpl
+import com.example.e_book.domain_layer.Repo
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import dagger.Module
@@ -28,7 +28,7 @@ object HiltModule {
 
     @Provides
     @Singleton
-    fun provideRepo(firebaseDatabase: FirebaseDatabase): AllBookRepo {
-        return AllBookRepoImpl(firebaseDatabase)
+    fun provideRepo(firebaseDatabase: FirebaseDatabase): Repo {
+        return RepoImpl(firebaseDatabase)
     }
 }

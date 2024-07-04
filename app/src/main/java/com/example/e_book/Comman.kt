@@ -8,7 +8,14 @@ sealed class ResultState<out T> {
 }
 
 data class BookModel(
+    var bookAuthor: String = "",
     var bookImgUrl: String = "",
     var bookName: String = "",
-    var bookPdfUrl:String=""
+    var bookPdfUrl: String = "",
+    var bookCategory: String = ""
+)
+
+data class BookCategory(
+    var Name: String = "",
+    var img: String = ""
 )

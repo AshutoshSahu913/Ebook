@@ -2,6 +2,7 @@
 agp = "8.5.0"
 bouquetVersion = "1.1.2"
 coilCompose = "2.6.0"
+coreSplashscreen = "1.0.1"
 hiltAndroid = "2.50"
 hiltAndroidCompiler = "2.50"
 hiltCompiler = "1.2.0"
@@ -18,9 +19,14 @@ googleGmsGoogleServices = "4.4.2"
 firebaseDatabase = "21.0.0"
 firebaseFirestore = "25.0.0"
 firebaseStorage = "21.0.0"
+kotlinxSerializationJson = "1.6.3"
+kotlinxSerialization = "1.9.0"
+navigationCompose = "2.8.0-alpha08"
+firebasePerfKtx = "21.0.1"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompiler" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltCompiler" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
@@ -44,9 +50,15 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 firebase-storage = { group = "com.google.firebase", name = "firebase-storage", version.ref = "firebaseStorage" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+firebase-perf-ktx = { group = "com.google.firebase", name = "firebase-perf-ktx", version.ref = "firebasePerfKtx" }
+
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 google-gms-google-services = { id = "com.google.gms.google-services", version.ref = "googleGmsGoogleServices" }
+jetbrains-kotlin-serialization = { id ="org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlinxSerialization"}
 

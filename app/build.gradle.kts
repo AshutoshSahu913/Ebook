@@ -5,6 +5,9 @@ plugins {
     id("kotlin-kapt")
     id("com.google.dagger.hilt.android")
     alias(libs.plugins.google.gms.google.services)
+
+    alias(libs.plugins.jetbrains.kotlin.serialization)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -66,6 +69,7 @@ dependencies {
     implementation(libs.firebase.database)
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.storage)
+    implementation(libs.firebase.perf.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -83,7 +87,11 @@ dependencies {
     implementation(libs.androidx.hilt.navigation.compose)
 
     implementation(libs.coil.compose)
-//    implementation (libs.grizzi91.bouquet)
+        implementation (libs.grizzi91.bouquet)
 
-    implementation(libs.jetpdfvue)
+//    implementation(libs.jetpdfvue)
+
+    implementation(libs.androidx.core.splashscreen)
+    implementation(libs.androidx.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
 }
