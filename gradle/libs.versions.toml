@@ -3,6 +3,7 @@ agp = "8.5.0"
 bouquetVersion = "1.1.2"
 coilCompose = "2.6.0"
 coreSplashscreen = "1.0.1"
+datastorePreferences = "1.0.0"
 hiltAndroid = "2.50"
 hiltAndroidCompiler = "2.50"
 hiltCompiler = "1.2.0"
@@ -27,6 +28,7 @@ firebasePerfKtx = "21.0.1"
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", version.ref = "coreSplashscreen" }
+androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompiler" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltCompiler" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }

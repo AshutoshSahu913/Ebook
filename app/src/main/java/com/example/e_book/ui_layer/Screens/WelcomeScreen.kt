@@ -24,12 +24,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.e_book.R
 import com.example.e_book.ui_layer.Navigation.NavigationItem
+import com.example.e_book.ui_layer.ViewModel.ViewModel
 
 @Composable
-fun WelcomeScreen(navController: NavHostController) {
+fun WelcomeScreen(navController: NavHostController, viewModel: ViewModel = hiltViewModel()) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
@@ -65,7 +67,10 @@ fun WelcomeScreen(navController: NavHostController) {
 
         ElevatedButton(
             modifier = Modifier,
-            onClick = { navController.navigate(NavigationItem.HomeScreen) },
+            onClick = {
+                viewModel.saveUserId(userId = 1)
+                navController.navigate(NavigationItem.HomeScreen)
+            },
             colors = ButtonDefaults.buttonColors(Color.Blue),
             shape = CircleShape,
 
