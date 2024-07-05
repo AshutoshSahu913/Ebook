@@ -27,7 +27,7 @@ class ViewModel @Inject constructor(
     ViewModel() {
     private val _state: MutableState<ItemsState> = mutableStateOf(ItemsState())
     val state: MutableState<ItemsState> = _state
-    val userPref = UserPrefImpl(dataStore)
+    private val userPref = UserPrefImpl(dataStore)
     val userIdFlow = userPref.getUserId().stateIn(
         scope = viewModelScope,
         initialValue = 0,
@@ -76,6 +76,30 @@ class ViewModel @Inject constructor(
         }
     }
 
+
+    fun deleteUserId() {
+        viewModelScope.launch {
+            userPref.deleteUserId()
+        }
+    }
+
+    fun deleteUserName() {
+        viewModelScope.launch {
+            userPref.deleteUserName()
+        }
+    }
+
+    fun deleteUserPhone() {
+        viewModelScope.launch {
+            userPref.deleteUserPhone()
+        }
+    }
+
+    fun deleteUserImg() {
+        viewModelScope.launch {
+            userPref.deleteUserImg()
+        }
+    }
     fun getAllCategories() {
         viewModelScope.launch {
             repo.getAllCategory().collect {
@@ -112,7 +136,7 @@ class ViewModel @Inject constructor(
                     }
 
                     is ResultState.Success -> {
-                        Log.d("BOOK", "ViewModel:------------------${it.data} ")
+//                        Log.d("BOOK", "ViewModel:------------------${it.data} ")
                         _state.value = ItemsState(books = it.data)
                     }
                 }
@@ -134,7 +158,7 @@ class ViewModel @Inject constructor(
                     }
 
                     is ResultState.Success -> {
-                        Log.d("BOOK", "ViewModel:------------------${it.data} ")
+//                        Log.d("BOOK", "ViewModel:------------------${it.data} ")
                         _state.value = ItemsState(books = it.data)
                     }
                 }

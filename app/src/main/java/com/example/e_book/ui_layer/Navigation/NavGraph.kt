@@ -1,6 +1,7 @@
 package com.example.e_book.ui_layer.Navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
@@ -24,7 +25,6 @@ fun NavControllerHost(navController: NavHostController) {
     val userPhone = viewModel.userPhoneFlow.collectAsState().value
     val userImg = viewModel.userImgFlow.collectAsState().value
 
-
     val startScreen = if (userId == 1) {
         NavigationItem.HomeScreen
     } else {
@@ -46,6 +46,7 @@ fun NavControllerHost(navController: NavHostController) {
         }
         composable<NavigationItem.ShowPdfScreen> {
             val url = it.toRoute<NavigationItem.ShowPdfScreen>()
+
             ShowPdfScreen(navController = navController, url = url.url)
         }
 

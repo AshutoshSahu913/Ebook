@@ -5,8 +5,11 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.shape.CircleShape
@@ -22,11 +25,14 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import com.example.e_book.R
+import com.example.e_book.ui.theme.Color2
 import com.example.e_book.ui_layer.Navigation.NavigationItem
 import com.example.e_book.ui_layer.ViewModel.ViewModel
 
@@ -41,15 +47,16 @@ fun WelcomeScreen(navController: NavHostController, viewModel: ViewModel = hiltV
         Image(
             painter = painterResource(id = R.drawable.img1),
             contentDescription = "",
-            modifier = Modifier.size(300.dp)
+            modifier = Modifier.fillMaxWidth().padding(10.dp)
         )
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(30.dp))
         Text(
             modifier = Modifier
                 .wrapContentSize()
                 .align(Alignment.CenterHorizontally),
             text = "Start your\nJourney with Books",
             fontWeight = FontWeight.Normal,
+            letterSpacing = TextUnit(0.2f, type = TextUnitType.Em),
             fontSize = 25.sp,
             fontFamily = FontFamily(Font(R.font.poppins_regular)),
             textAlign = TextAlign.Center, color = Color.Black
@@ -63,7 +70,7 @@ fun WelcomeScreen(navController: NavHostController, viewModel: ViewModel = hiltV
             fontFamily = FontFamily(Font(R.font.poppins_light)),
         )
 
-        Spacer(modifier = Modifier.height(20.dp))
+        Spacer(modifier = Modifier.height(50.dp))
 
         ElevatedButton(
             modifier = Modifier,
@@ -71,14 +78,13 @@ fun WelcomeScreen(navController: NavHostController, viewModel: ViewModel = hiltV
                 viewModel.saveUserId(userId = 1)
                 navController.navigate(NavigationItem.HomeScreen)
             },
-            colors = ButtonDefaults.buttonColors(Color.Blue),
+            colors = ButtonDefaults.buttonColors(Color2),
             shape = CircleShape,
-
-            contentPadding = PaddingValues(horizontal = 40.dp, vertical = 10.dp)
+            contentPadding = PaddingValues(horizontal = 50.dp, vertical = 10.dp)
         ) {
 
             Text(
-                text = "Get Started ",
+                text = "Get Started",
                 fontWeight = FontWeight.Light,
                 fontSize = 20.sp,
                 color = Color.White,

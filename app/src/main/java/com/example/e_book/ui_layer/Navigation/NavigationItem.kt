@@ -18,4 +18,7 @@ sealed class NavigationItem {
 
     @Serializable
     object LoginScreen
+
+    @Serializable
+    object ProfileScreen
 }

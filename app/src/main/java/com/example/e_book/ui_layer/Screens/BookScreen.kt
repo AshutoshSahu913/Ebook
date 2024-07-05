@@ -2,6 +2,7 @@ package com.example.e_book.ui_layer.Screens
 
 import android.util.Log
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -33,6 +34,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.example.e_book.R
+import com.example.e_book.ui.theme.Color3
 import com.example.e_book.ui_layer.Navigation.NavigationItem
 import com.example.e_book.ui_layer.ViewModel.ViewModel
 
@@ -47,8 +49,6 @@ fun BookScreen(
         viewModel.getAllBooks()
     }
     val res = viewModel.state.value
-    Log.d("BOOK", "BookScreen 2 :------------------${res.books} ")
-
 
     when {
         res.isLoading -> {
@@ -82,18 +82,15 @@ fun BookScreen(
         res.books.isNotEmpty() -> {
 //            LazyVerticalGrid(columns = GridCells.Fixed(2)) {
             LazyColumn {
-
-
                 items(res.books) { book ->
                     Log.d("BOOK", "BookScreen 1:------------------${book.bookName} ")
-
                     Card(
                         onClick = {
                             navController.navigate(NavigationItem.ShowPdfScreen(book.bookPdfUrl))
                         }, modifier = Modifier.padding(10.dp), shape = RoundedCornerShape(1.dp),
 
                         colors = CardDefaults.cardColors(
-                            Color.White
+                            Color3
                         )
                     ) {
 
@@ -112,7 +109,9 @@ fun BookScreen(
 //                            ) {
 
                             AsyncImage(
-                                modifier = Modifier.size(200.dp),
+                                modifier = Modifier
+                                    .background(Color3)
+                                    .size(200.dp),
                                 contentScale = ContentScale.None,
                                 placeholder = painterResource(id = R.drawable.book1),
                                 model = book.bookImgUrl,

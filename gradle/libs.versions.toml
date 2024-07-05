@@ -22,6 +22,7 @@ firebaseFirestore = "25.0.0"
 firebaseStorage = "21.0.0"
 kotlinxSerializationJson = "1.6.3"
 kotlinxSerialization = "1.9.0"
+materialIconsExtendedAndroid = "1.6.8"
 navigationCompose = "2.8.0-alpha08"
 firebasePerfKtx = "21.0.1"
 
@@ -31,6 +32,7 @@ androidx-core-splashscreen = { module = "androidx.core:core-splashscreen", versi
 androidx-datastore-preferences = { module = "androidx.datastore:datastore-preferences", version.ref = "datastorePreferences" }
 androidx-hilt-compiler = { module = "androidx.hilt:hilt-compiler", version.ref = "hiltCompiler" }
 androidx-hilt-navigation-compose = { module = "androidx.hilt:hilt-navigation-compose", version.ref = "hiltCompiler" }
+androidx-material-icons-extended-android = { module = "androidx.compose.material:material-icons-extended-android", version.ref = "materialIconsExtendedAndroid" }
 coil-compose = { module = "io.coil-kt:coil-compose", version.ref = "coilCompose" }
 grizzi91-bouquet = { module = "io.github.grizzi91:bouquet", version.ref = "bouquetVersion" }
 hilt-android = { module = "com.google.dagger:hilt-android", version.ref = "hiltAndroid" }
@@ -55,6 +57,7 @@ firebase-storage = { group = "com.google.firebase", name = "firebase-storage", v
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 firebase-perf-ktx = { group = "com.google.firebase", name = "firebase-perf-ktx", version.ref = "firebasePerfKtx" }
+
 
 
 

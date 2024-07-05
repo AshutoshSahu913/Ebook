@@ -33,6 +33,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.example.e_book.R
+import com.example.e_book.ui.theme.Color2
+import com.example.e_book.ui.theme.Color3
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -50,10 +52,10 @@ fun TabContent(pagerState: PagerState, navController: NavHostController) {
     HorizontalPager(state = pagerState) {
         when (it) {
             0 -> {
-                CategoryScreen(modifier = Modifier.fillMaxSize(),navController=navController)
+                CategoryScreen(modifier = Modifier.fillMaxSize().background(Color3),navController=navController)
             }
             1 -> {
-                BookScreen(modifier = Modifier.fillMaxSize(),navController=navController)
+                BookScreen(modifier = Modifier.fillMaxSize().background(Color3),navController=navController)
             }
         }
 
@@ -72,8 +74,7 @@ fun Tabs(pagerState: PagerState) {
     TabRow(
         selectedTabIndex = pagerState.currentPage,
         modifier = Modifier.wrapContentSize(),
-        containerColor = Color.White,
-
+        containerColor = Color3,
     ) {
         tabNames.forEachIndexed { index, tabItem ->
             Tab(
@@ -91,7 +92,7 @@ fun Tabs(pagerState: PagerState) {
                             modifier = Modifier
                                 .fillMaxSize()
                                 .background(
-                                    color = Color.Black,
+                                    color = Color2,
                                     shape = CircleShape
                                 )
                         ) {
@@ -115,7 +116,7 @@ fun Tabs(pagerState: PagerState) {
                             modifier = Modifier
                                 .fillMaxSize()
                                 .background(
-                                    color = Color.White,
+                                    color = Color3,
                                     shape = CircleShape
                                 )
                                 .clip(
@@ -141,7 +142,7 @@ fun Tabs(pagerState: PagerState) {
                 unselectedContentColor = Color.Black,
                 modifier = Modifier
                     .padding(10.dp)
-                    .background(Color.White),
+                    .background(Color3),
             )
         }
     }

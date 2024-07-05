@@ -85,7 +85,6 @@ dependencies {
 
         //Hilt viewModel
     implementation(libs.androidx.hilt.navigation.compose)
-
     implementation(libs.coil.compose)
         implementation (libs.grizzi91.bouquet)
 
@@ -96,4 +95,5 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
 
     implementation (libs.androidx.datastore.preferences)
+    implementation(libs.androidx.material.icons.extended.android)
 }

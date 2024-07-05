@@ -1,6 +1,7 @@
 package com.example.e_book.ui_layer.Screens
 
 import android.util.Log
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -27,11 +28,15 @@ import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.unit.TextUnit
+import androidx.compose.ui.unit.TextUnitType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
 import com.example.e_book.R
+import com.example.e_book.ui.theme.Color2
 import com.example.e_book.ui.theme.Color3
 import com.example.e_book.ui_layer.Navigation.NavigationItem
 
@@ -84,32 +89,33 @@ fun HomeScreen(
                             modifier = Modifier
                                 .padding(start = 5.dp)
                                 .align(Alignment.Bottom),
-                            text = "Hello 🫵 ",
+                            text = "Hello, ",
                             color = Color.Black,
                             fontStyle = FontStyle.Normal,
-                            fontWeight = FontWeight.Black,
+
                             fontFamily = FontFamily(Font(R.font.poppins_light)),
-                            fontSize = 25.sp
+                            fontSize = 25.sp,
                         )
                         Text(
-                            modifier = Modifier.align(Alignment.Top),
+                            modifier = Modifier
+                                .align(Alignment.Bottom),
                             text = userName,
-                            color = Color.Blue,
+                            color = Color2,
                             fontStyle = FontStyle.Normal,
                             fontWeight = FontWeight.Black,
-                            fontFamily = FontFamily(Font(R.font.poppins_regular)),
-                            fontSize = 25.sp
+                            fontFamily = FontFamily(Font(R.font.poppins_semi_bold)),
+                            fontSize = 30.sp
                         )
 
                     }
                     Text(
                         modifier = Modifier.padding(start = 5.dp),
-                        text = "Welcome To The Library",
+                        text = "Welcome To The Library \uD83D\uDCDA",
                         color = Color.Black,
-                        fontStyle = FontStyle.Normal,
                         fontWeight = FontWeight.Light,
                         fontFamily = FontFamily(Font(R.font.poppins_light)),
-                        fontSize = 15.sp,
+                        fontSize = 14.sp,
+                        textDecoration = TextDecoration.None
                     )
                 }
                 Card(
@@ -118,13 +124,13 @@ fun HomeScreen(
                         navController.navigate(NavigationItem.ProfileScreen)
                     },
                     modifier = Modifier
-                        .padding(10.dp)
+                        .padding(horizontal = 20.dp, vertical = 10.dp)
                         .size(50.dp),
+                    border = BorderStroke(1.dp, Color.Gray),
                     elevation = CardDefaults.elevatedCardElevation(5.dp)
                 ) {
-                    Log.d("HOME_SCREEN", "HomeScreen: $userImg")
+//                    Log.d("HOME_SCREEN", "HomeScreen: $userImg")
                     AsyncImage(
-
                         model = userImg,
                         contentDescription = null,
                         modifier = Modifier.fillMaxSize(),
